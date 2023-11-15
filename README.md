@@ -1,4 +1,47 @@
+# YoloGroup's searching countries and countries label task
+## Table of Contents
+- [Installation](#installation)
+- [Testing](#testing)
+- [Features](#Features)
+- [Contact Information](#contact-information)
+
+# installation
+To install the project, follow these steps:
+run this command in a terminal of directory you want:
+- git clone https://github.com/zaraganja/YoloGroup-Countries-Zahra.h.g.git
+Install dependencies run:
+open terminal in file of the project:
+- npm install
+Start the application run :
+- npm run dev
+
+# testing
+to test the full application run :
+- npm test
+to test CountriesTable component run :
+- npm test CountriesTable.test.tsx
+to test SearchBox component run :
+- npm test SearchBox.test.tsx
+to test App component :
+- npm test App.test.tsx
+
+# Features
+- React , Typescrip and Vite
+- TailwindCSS as CSS framework
+- @testing-library/react and jest as testing libraries
+- react-icons library to import icon (search icon)
+- react-responsive library to develope PWA responsive mode of the project
+- GraphQL queries for fetching data from graphQL API
+
+# contact-information
+email-addres : zahra.h.ganji@gmail.com
+LinkedIn : https://www.linkedin.com/in/zahrahozhabriganji/
+
+
+
+
 # React + TypeScript + Vite
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
