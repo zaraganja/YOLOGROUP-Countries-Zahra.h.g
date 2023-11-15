@@ -12,13 +12,13 @@ run this command in a terminal of directory you want:
 
 - git clone https://github.com/zaraganja/YoloGroup-Countries-Zahra.h.g.git
 
-Install dependencies run:
+To Install dependencies :
 
-open terminal in file of the project:
+open terminal in file of the project and run:
 
 - npm install
 
-Start the application run :
+To Start the application run :
 
 - npm run dev
 
@@ -40,7 +40,7 @@ to test App component :
 - npm test App.test.tsx
 
 # Features
-- React , Typescrip and Vite
+- React , Typescript and Vite
 - TailwindCSS as CSS framework
 - @testing-library/react and jest as testing libraries
 - react-icons library to import icon (search icon)
