@@ -7,22 +7,36 @@
 
 # installation
 To install the project, follow these steps:
+
 run this command in a terminal of directory you want:
+
 - git clone https://github.com/zaraganja/YoloGroup-Countries-Zahra.h.g.git
+
 Install dependencies run:
+
 open terminal in file of the project:
+
 - npm install
+
 Start the application run :
+
 - npm run dev
 
 # testing
 to test the full application run :
+
 - npm test
+
 to test CountriesTable component run :
+
 - npm test CountriesTable.test.tsx
+
 to test SearchBox component run :
+
 - npm test SearchBox.test.tsx
+
 to test App component :
+
 - npm test App.test.tsx
 
 # Features
@@ -35,6 +49,7 @@ to test App component :
 
 # contact-information
 email-addres : zahra.h.ganji@gmail.com
+
 LinkedIn : https://www.linkedin.com/in/zahrahozhabriganji/
 
 
