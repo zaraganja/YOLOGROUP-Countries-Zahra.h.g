@@ -6,7 +6,10 @@
 body {
   display: flex;
   place-items: center;
-  overflow-x: hidden;
+ overflow-x: hidden;
+ overscroll-behavior: none;
+  margin:0;
+  padding: 0;
 }
 
 
