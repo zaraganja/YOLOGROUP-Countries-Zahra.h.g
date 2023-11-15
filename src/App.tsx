@@ -5,11 +5,19 @@ import { FilterByCodeQuery, CountriesListQuery, RegexSearchQuery } from './queri
 import SearchBox from './components/SearchBox';
 import CountriesTable from './components/CountriesTable';
 import { useMediaQuery } from "react-responsive";
+import Alert from './components/Alert';
 
 
 
 
 const App = (props: any) => {
+
+  const [showAlert, setshowAlert] = useState(false)
+  const [AlertTXT, setAlertTXT] = useState("")
+  const CloseAlert = () => {
+    setshowAlert(false);
+  }
+
   const [Countries, setCountries] = useState<Country[]>();
   const [searchValue, setsearchValue] = useState<string>('');
   const isMobile: boolean = useMediaQuery({ query: `(max-width: 760px)` });
@@ -24,12 +32,12 @@ const App = (props: any) => {
         body: JSON.stringify({ query: CountriesListQuery }),
       });
       const data = await response.json();
-      console.log('GraphQL-Response:', JSON.stringify(data.data.countries));
       const countries = data.data.countries;
       const Data: Country[] = countries;
       setCountries(Data);
     } catch (error) {
-      console.log('Error in fetching data:', error);
+      setAlertTXT('Error in fetching data:' + error);
+      setshowAlert(true)
     }
   }
 
@@ -56,7 +64,8 @@ const App = (props: any) => {
       setCountries(Data)
     }
     catch (error) {
-      console.log('Error in fetching data:', error);
+      setAlertTXT('Error in fetching data:' + error);
+      setshowAlert(true)
     };
   }
 
@@ -71,14 +80,13 @@ const App = (props: any) => {
         body: JSON.stringify({ query: RegexSearchQuery(mysearchValue) }),
       });
       const data = await response.json();
-
-      console.log('GraphQL-Response:', JSON.stringify(data.data.countries));
       const countries = data.data.countries;
       const Data: Country[] = countries;
       setCountries(Data)
     }
     catch (error) {
-      console.log('Error in fetching data:', error);
+      setAlertTXT('Error in fetching data:' + error);
+      setshowAlert(true)
     };
   }
   const setsearchValueFunc = (searchValue: string) => {
@@ -87,9 +95,12 @@ const App = (props: any) => {
 
 
 
+
+
   return (
     <>
       <div className={isMobile ? ` min-h-screen flex flex-col bg-[url('./assets/worldback.jpg')] bg-cover bg-center bg-no-repeat bg-fixed pl-[5%] pt-[1%] ${props.className_div} ` : `min-h-screen flex flex-col bg-[url('./assets/worldback.jpg')] bg-cover bg-fixed pl-[5%] pt-[1%] ${props.className_div}`} style={props?.style_div}>
+        <Alert alertText={AlertTXT} CloseAlert={CloseAlert} showAlert={showAlert} />
         <h3 data-testid="first title" className=' text-sm font-serif font-semibold text-yellow-50'> YOLO GROUP  Fun  Fast  Fair </h3>
         <h3 data-testid="second title" className=' text-sm font-serif font-semibold text-yellow-50'>developer: Zahra Hozhabri Ganji</h3>
         <h3 data-testid="third title" className=' text-sm font-serif font-semibold text-yellow-50'> This project is designed also in responsive mode (PWA)</h3>
